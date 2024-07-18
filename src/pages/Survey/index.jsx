@@ -1,3 +1,4 @@
+
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -84,9 +85,9 @@ function Survey() {
     <SurveyContainer>
       <QuestionTitle theme={theme}>Question {questionNumber}</QuestionTitle>
       {isLoading ? (
-        <Loader />
+        <Loader data-testid="loader" />
       ) : (
-        <QuestionContent theme={theme}>
+        <QuestionContent theme={theme} data-testid="question-content">
           {surveyData && surveyData[questionNumber]}
         </QuestionContent>
       )}
